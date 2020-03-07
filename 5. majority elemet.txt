@@ -1,0 +1,35 @@
+//  int y[] = {1,2,3,4,5,6,7,8};
+			  int size = y.length;
+			  
+			  HashMap<Integer,Integer> map = new HashMap<>();
+			  int i =0;
+			  while(i!=size)
+			  {
+				  if(map.containsKey(y[i]) == false)
+				  {
+					  map.put(y[i],1);
+				  }
+				  else
+				  {
+					  int oldval = map.get(y[i]);
+					  int newval = oldval+1;
+					 map.put(y[i],newval);
+				  }
+				  i++;
+			  }
+			  int n=y.length/2;
+			  int result=0;
+			  Set<Map.Entry<Integer,Integer>>hmap = map.entrySet();
+			  for(Map.Entry<Integer,Integer>data : hmap)
+			  {
+				  if(data.getValue()>n)
+				  {
+					  result = data.getKey();
+					  break;
+					  }
+				//System.out.print(data.getKey()+" occure ");
+			//	System.out.println(data.getValue()+" times ");
+			  }
+			  return result;
+			  
+			  
